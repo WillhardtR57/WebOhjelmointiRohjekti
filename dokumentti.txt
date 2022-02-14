@@ -1,0 +1,7 @@
+Webohjelmointi projekti - Tuukka Kotilainen, Willhardt Räsänen, Juha Kärnä
+
+Sovellus on foorumin tyylinen web sivu mihin käyttäjät kirjoittaa jotain tekstiä formeihin ja tulostaa sivulle näkyville muille käyttäjille.
+
+Työ koostuu CSS, HTML ja PHP kielistä ja myös mukana tietenkin MySQL tietokanta puolena.
+
+Juha on tekemässä PHP tiedostoja, Tuukka HTML sivuja ja niille tyylit CSS tiedostolla ja Willhardt github repositoryn, shelliin yhteyden, MySQL tietokannan ja tätä dokumenttia.
