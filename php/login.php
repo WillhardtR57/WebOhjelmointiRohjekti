@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
                             // Salasana on oikein  aloita uusi sessio
-                            session_start();
+                            #session_start();
                             
                             // Säilö data se säilö dataa session variableihin
                             $_SESSION["loggedin"] = true;
