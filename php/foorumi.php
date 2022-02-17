@@ -1,7 +1,3 @@
-<?php 
-include "../html/header.html";
-?>
-
 <?php
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 
@@ -21,7 +17,7 @@ try {
         exit;
     }
 
-$sql="insert into foorumipost (id, otsikko, teksti) values(?, ?, ?)";
+$sql="insert into foorumipost (otsikko, teksti) values(?, ?)";
 
 $stmt=mysqli_prepare($yhteys, $sql);
 
