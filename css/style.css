@@ -45,3 +45,6 @@ li a:hover {
     padding:15px;
     width:25em;
 }
+input {
+    width: 25%;
+  }
