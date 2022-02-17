@@ -16,7 +16,7 @@ $tulos=mysqli_query($yhteys, "select * from foorumipost");
 
 print "<ol>";
 while ($rivi=mysqli_fetch_object($tulos)) {
-    print "<li>$rivi-> id $rivi->otsikko $rivi->teksti"; 
+    print "<li>$rivi->otsikko $rivi->teksti"."<br>"; 
 }
 print"</ol>";
 
