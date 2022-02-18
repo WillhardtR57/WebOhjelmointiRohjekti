@@ -7,6 +7,27 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 </style>
+<script>
+    function lahetaPostaus(lomake) {
+        var postaus=new Object()
+        postaus.otsikko=lomake.otsikko.value;
+        postaus.teksti=lomake.teksti.value;
+        var jsonPostaus=JSON.stringify(postaus);
+        document.getElementById("result").innerHTML=jsonPostaus;
+
+        xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("result2").innerHTML = this.responseText;
+            }
+        };
+
+        xmlhttp.open("POST", "../php/foorumi.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("postaus=" + jsonPostaus);
+    }
+</script>
 </head>
 <body>
     <nav class="navbar">
@@ -19,11 +40,13 @@
             </nav>
         </ul>
         </nav>
-<form action="../php/foorumi.php" method="post">
+<form>
 <h2>Fill in!</h2>
 Otsikko: <input type="text" name="otsikko" placeholder="otsikko"><br>
 Teksti: <textarea style="resize: none;" rows="4" cols="30" name="teksti" placeholder="teksti"></textarea><br>
-<input type="submit" name="ok" value="Lähetä">
+<input type="button" name="ok" value="Lähetä" onclick='lahetaPostaus(this.form);'>
 </form>
+<p id="result"></p>
+<p id="result2"></p>
 </body>
 </html>
