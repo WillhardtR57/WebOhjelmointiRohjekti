@@ -12,14 +12,14 @@ if (empty($otsikko) || empty($teksti)) {
 }
 
 try {
-    $yhteys=mysqli_connect("db", "root", "password", "foorumi");
+    $yhteys=mysqli_connect("db", "root", "password", "forumkanta");
     }
     catch(Exception $e){
         header("Location:../html/yhteysvirhe.html");
         exit;
     }
 
-$sql="insert into foorumipost (otsikko, teksti) values(?, ?)";
+$sql="insert into postaus (otsikko, teksti) values(?, ?)";
 
 $stmt=mysqli_prepare($yhteys, $sql);
 

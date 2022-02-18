@@ -5,14 +5,14 @@ include "../html/header.html";
 <?php
 require_once "config.php";
 try {
-    $yhteys=mysqli_connect("db", "root", "password", "foorumi");
+    $yhteys=mysqli_connect("db", "root", "password", "forumkanta");
     }
     catch(Exception $e){
         header("Location:../html/yhteysvirhe.html");
         exit;
     }
 
-$tulos=mysqli_query($yhteys, "select * from foorumipost");
+$tulos=mysqli_query($yhteys, "select * from postaus");
 
 print "<table border='1' cellspacing='2' cellpadding='2'>";
 while ($rivi=mysqli_fetch_object($tulos)) {
