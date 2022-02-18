@@ -1,11 +1,13 @@
 <?php
+require_once "config.php";
+
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 
 $otsikko=isset($_POST["otsikko"]) ? $_POST["otsikko"] : "";
 $teksti=isset($_POST["teksti"]) ? $_POST["teksti"] : "";
 
 if (empty($otsikko) || empty($teksti)) {
-    header("Location:../html/forum.html");
+    header("Location:../php/foorumi.php");
     exit;
 }
 

@@ -3,7 +3,7 @@ include "../html/header.html";
 ?>
 
 <?php
-
+require_once "config.php";
 try {
     $yhteys=mysqli_connect("db", "root", "password", "foorumi");
     }
@@ -14,11 +14,11 @@ try {
 
 $tulos=mysqli_query($yhteys, "select * from foorumipost");
 
-print "<ol>";
+print "<table border='1' cellspacing='2' cellpadding='2'>";
 while ($rivi=mysqli_fetch_object($tulos)) {
-    print "<li>$rivi->otsikko $rivi->teksti"."<br>"; 
+    print "<tr><td>"."<th>".$rivi->username."<td>".$rivi->otsikko."<td>".$rivi->teksti; 
 }
-print"</ol>";
+print"</table>";
 
 mysqli_close($yhteys);
 
