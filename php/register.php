@@ -84,8 +84,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
  
 <?php
- include "../html/header.html";
+ include "../php/header.php";
 ?>
+<hr>
 <body>
     <div class="kontti">
         <h2>Sign Up</h2>

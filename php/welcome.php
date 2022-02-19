@@ -9,15 +9,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     
     echo 
     "
-    <h1>Welcome to our site, please log in to access the content.</h1>
+    <hr>
+    <br>
+    <h1 class=\"unlogged\">Welcome to our site, please log in to access the content.</h1>
     </body>
     </html>";
 
 }else{
     echo
     "
+    <hr>
+    <br>
     <div class=\"kontti\">
-    <h1 class=\"my-5\">Hi,"?><?php echo htmlspecialchars($_SESSION["username"]); ?><?php"<h1> Welcome to our site.</h1>
+    <h1>Hi, "; echo htmlspecialchars($_SESSION["username"]); echo "<h1> Welcome to our site.</h1>
     <p>
         <a href=\"reset-password.php\" class=\"btn btn-warning\">Reset Your Password</a>
     </p>
@@ -58,10 +62,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                          Praesent suscipit accumsan magna a consequat.</p>
     </div>
 </div>
-</body>
-</html>";
-    
+";   
 }
-
 ?>
 
