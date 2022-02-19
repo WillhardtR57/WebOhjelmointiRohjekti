@@ -37,7 +37,7 @@ $tulos=mysqli_query($yhteys, "select * from postaus left join users on users.use
 
 print "<table border='1'>";
 while ($rivi=mysqli_fetch_object($tulos)) {
-    print "<tr><td>"."<td>".$postaus->id=$rivi->id."<td>".$postaus->username=$rivi->username."<td>".$postaus->otsikko=$rivi->otsikko."<td>".$postaus->teksti=$rivi->teksti; 
+    print "<tr><td>"."<td>".($_SESSION["username"])."<td>".$postaus->otsikko=$rivi->otsikko."<td>".$postaus->teksti=$rivi->teksti; 
 }
 print"</table>";
 
