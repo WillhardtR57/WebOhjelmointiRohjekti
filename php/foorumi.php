@@ -33,11 +33,11 @@ mysqli_stmt_bind_param($stmt, 'ss', $postaus->otsikko, $postaus->teksti);
 
 mysqli_stmt_execute($stmt);
 
-$tulos=mysqli_query($yhteys, "select * from postaus left join users on users.username=postaus.id");
+$tulos=mysqli_query($yhteys, "select * from postaus");
 
 print "<table border='1'>";
 while ($rivi=mysqli_fetch_object($tulos)) {
-    print "<tr><td>"."<td>".$postaus->id=$rivi->id."<td>".$postaus->username=$rivi->username."<td>".$postaus->otsikko=$rivi->otsikko."<td>".$postaus->teksti=$rivi->teksti; 
+    print "<tr><td>"."<td>".($_SESSION["username"])."<td>".$postaus->otsikko=$rivi->otsikko."<td>".$postaus->teksti=$rivi->teksti; 
 }
 print"</table>";
 
