@@ -35,9 +35,10 @@ mysqli_stmt_execute($stmt);
 
 $tulos=mysqli_query($yhteys, "select * from postaus");
 
+
 print "<table border='1'>";
 while ($rivi=mysqli_fetch_object($tulos)) {
-    print "<tr><td>"."<td>".($_SESSION["username"])."<td>".$postaus->otsikko=$rivi->otsikko."<td>".$postaus->teksti=$rivi->teksti; 
+    print "<tr><td>".$_SESSION["username"]."<td>".$postaus->otsikko=$rivi->otsikko."<td>".$postaus->teksti=$rivi->teksti; 
 }
 print"</table>";
 
