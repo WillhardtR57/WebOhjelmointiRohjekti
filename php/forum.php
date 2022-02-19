@@ -45,7 +45,7 @@ require_once "config.php";
             <li><a href="../html/index.html">Home</a></li>
             <li><a href="../php/register.php">Register</a></li>
             <li><a href="../php/login.php">Login</a></li>
-            <li><a href="../html/forum.html">Forum</a></li>
+            <li><a href="../php/forum.php">Forum</a></li>
             </nav>
         </ul>
         </nav>
