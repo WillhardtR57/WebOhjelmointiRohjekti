@@ -1,32 +1,52 @@
 <?php
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 
-$otsikko=isset($_POST["otsikko"]) ? $_POST["otsikko"] : "";
-$teksti=isset($_POST["teksti"]) ? $_POST["teksti"] : "";
+$json=isset($_POST["postaus"]) ? $_POST["postaus"] : "";
 
-if (empty($otsikko) || empty($teksti)) {
-    header("Location:../html/forum.html");
+if (!($postaus=tarkistaJson($json))) {
+    print "Täytä kaikki kentät";
     exit;
 }
+print "postia".$json;
 
 try {
-    $yhteys=mysqli_connect("db", "root", "password", "foorumi");
+    $yhteys=mysqli_connect("db", "root", "password", "forumkanta");
     }
     catch(Exception $e){
         header("Location:../html/yhteysvirhe.html");
         exit;
     }
 
-$sql="insert into foorumipost (otsikko, teksti) values(?, ?)";
+$sql="insert into postaus (otsikko, teksti) values(?, ?)";
 
 $stmt=mysqli_prepare($yhteys, $sql);
 
-mysqli_stmt_bind_param($stmt, 'ss', $otsikko, $teksti);
+mysqli_stmt_bind_param($stmt, 'ss', $postaus->otsikko, $postaus->teksti);
 
 mysqli_stmt_execute($stmt);
 
+$tulos=mysqli_query($yhteys, "select * from postaus");
+
+print "<table border='1'>";
+while ($rivi=mysqli_fetch_object($tulos)) {
+    print "<tr><td>"."<td>".$postaus->id=$rivi->id."<td>".$postaus->otsikko=$rivi->otsikko."<td>".$postaus->teksti=$rivi->teksti; 
+}
+print"</table>";
+
 mysqli_close($yhteys);
 
-header("Location:./luefoorumi.php");
+?>
+
+<?php
+function tarkistaJson($json) {
+    if (empty($json)) {
+        return false;
+    }
+    $postaus=json_decode($json, false);
+    if (empty($postaus->otsikko) || empty($postaus->teksti)) {
+        return false;
+    }
+    return $postaus;
+}
 
 ?>
