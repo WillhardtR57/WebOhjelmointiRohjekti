@@ -15,7 +15,6 @@ if (!($postaus=tarkistaJson($json))) {
     print "Täytä kaikki kentät";
     exit;
 }
-print "postia".$json;
 
 try {
     $yhteys=mysqli_connect("db", "root", "password", "forumkanta");
@@ -35,10 +34,14 @@ mysqli_stmt_execute($stmt);
 
 $tulos=mysqli_query($yhteys, "select * from postaus");
 
+$user="Anonymous";
 
 print "<table border='1'>";
 while ($rivi=mysqli_fetch_object($tulos)) {
-    print "<tr><td>".$_SESSION["username"]."<td>".$postaus->otsikko=$rivi->otsikko."<td>".$postaus->teksti=$rivi->teksti; 
+    print "<tr><th>Käyttäjä</th>"."<th>Otsikko</th>"."<th>Teksti</th>".
+    "<tr><td>".$user.
+    "<td>".$postaus->otsikko=$rivi->otsikko.
+    "<td>".$postaus->teksti=$rivi->teksti; 
 }
 print"</table>";
 
