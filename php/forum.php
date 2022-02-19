@@ -22,7 +22,7 @@ require_once "config.php";
         postaus.otsikko=lomake.otsikko.value;
         postaus.teksti=lomake.teksti.value;
         var jsonPostaus=JSON.stringify(postaus);
-        document.getElementById("result").innerHTML=jsonPostaus;
+        document.getElementById("result").innerHTML="";
 
         xmlhttp = new XMLHttpRequest();
 
