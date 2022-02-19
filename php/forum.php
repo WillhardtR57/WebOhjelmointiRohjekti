@@ -50,7 +50,7 @@ require_once "config.php";
         </ul>
         </nav>
 <form>
-<h2>Kirjoita viesti</h2>
+<h2>Kirjoita viesti, NYT!</h2>
 Otsikko: <input type="text" name="otsikko" placeholder="otsikko"><br>
 Teksti: <textarea style="resize: none;" rows="4" cols="30" name="teksti" placeholder="teksti"></textarea><br>
 <input type="button" name="ok" value="Lähetä" onclick='lahetaPostaus(this.form);'>
