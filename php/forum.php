@@ -6,7 +6,32 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 require_once "config.php";
 ?>
+<?php
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    echo "<nav class=\"navbar\">
+    <ul>
+        <nav class=\"navlinks\">
+        <li><a href=\"../php/welcome.php\">Home</a></li>
+        <li><a href=\"../php/register.php\">Register</a></li>
+        <li><a href=\"../php/login.php\">Login</a></li>
+      
+        </nav>
+    </ul>
+    </nav>";
 
+} else {
+        echo "<nav class=\"navbar\">
+        <ul>
+        <nav class=\"navlinks\">
+        <li><a href=\"../php/welcome.php\">Home</a></li>
+        <li><a href=\"../php/forum.php\">Forum</a></li>
+        <li><a href=\"../php/logout.php\">Logout</a></li>
+        </nav>
+    </ul>
+    </nav>";
+    }
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,16 +64,6 @@ require_once "config.php";
 </script>
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <nav class="navlinks">
-            <li><a href="../html/index.html">Home</a></li>
-            <li><a href="../php/register.php">Register</a></li>
-            <li><a href="../php/login.php">Login</a></li>
-            <li><a href="../php/forum.php">Forum</a></li>
-            </nav>
-        </ul>
-        </nav>
 <form>
 <h2>Kirjoita viesti, NYT!</h2>
 Otsikko: <input type="text" name="otsikko" placeholder="otsikko"><br>
