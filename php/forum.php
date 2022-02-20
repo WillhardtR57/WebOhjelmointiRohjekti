@@ -64,6 +64,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </script>
 </head>
 <body>
+<div class="kontti">
+<br>
 <form>
 <h2>Kirjoita viesti, NYT!</h2>
 Otsikko: <input type="text" name="otsikko" placeholder="otsikko"><br>
@@ -72,5 +74,6 @@ Teksti: <textarea style="resize: none;" rows="4" cols="30" name="teksti" placeho
 </form>
 <p id="result"></p> 
 <p id="result2"></p>
+</div>
 </body>
 </html>
