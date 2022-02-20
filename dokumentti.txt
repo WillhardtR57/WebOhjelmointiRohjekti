@@ -4,8 +4,6 @@ Sovellus on foorumin tyylinen web sivu mihin käyttäjät kirjoittaa jotain teks
 
 Työ koostuu CSS, HTML ja PHP kielistä ja myös mukana tietenkin MySQL tietokanta puolena.
 
-Tietokannat testausta varten on tehty dockerille.
-
 Juha on tekemässä PHP tiedostoja, Tuukka HTML sivuja ja niille tyylit CSS tiedostolla ja Willhardt github repositoryn, shelliin yhteyden, 
 MySQL tietokannan ja tätä dokumenttia, näin aluksi.
 
@@ -16,4 +14,7 @@ Tuukka on saanut yhdisteltyä CSS tyyliä PHP sivuihin onnistuneesti.
 Juhan PHP tiedostot on kanssa toiminnassa kun tehtiin users tietokanta rekistöintiä ja kirjautumista varten,
 foorumilla on kanssa postaus tietokanta millä saadaan luettua tekstit.
 
-Homma koostuu kotisivusta, nyymi "foorumista", rekisteröitymisestä ja kirjautumisesta pääosin. 
+Shellissä ainoa ongelma oli se kun ei ollut "oikeuksia" tehdä uuttaa tietokantaa shellin phpMyAdminissa mikä oli aika outoa,
+mutta saatiin tehtyä kumminkin valmiin wordpress tietokannan alle oleelliset pöydät tarvittaville tiedoille.
+
+Homma toimii kuin pitää shell.hamk sivullakin eli hyvä juttu.
