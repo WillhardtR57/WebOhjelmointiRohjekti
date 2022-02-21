@@ -18,3 +18,6 @@ Shellissä ainoa ongelma oli se kun ei ollut "oikeuksia" tehdä uuttaa tietokant
 mutta saatiin tehtyä kumminkin valmiin wordpress tietokannan alle oleelliset pöydät tarvittaville tiedoille.
 
 Homma toimii kuin pitää shell.hamk sivullakin eli hyvä juttu.
+
+Mitä kukin tehnyt:
+Juha : login.php | register.php | logout.php | reset-password.php
