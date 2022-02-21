@@ -22,3 +22,4 @@ Homma toimii kuin pitää shell.hamk sivullakin eli hyvä juttu.
 Mitä kukin tehnyt:
 Juha : login.php | register.php | logout.php | reset-password.php
 Tuukka: style.css | welcome.php | header.php
+Willhardt: forum.php | foorumi.php | luefoorumi.php
